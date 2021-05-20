@@ -852,10 +852,14 @@ func (c *streamCmd) renderReplication(stats []streamStat) {
 				apierr = source.Error.Error()
 			}
 
+			apiPfx := ""
+			if source.External != nil {
+				apiPfx = source.External.ApiPrefix
+			}
 			if c.reportRaw {
-				table.AddRow(s.Name, "Source", source.External.ApiPrefix, source.Name, source.Active, source.Lag, apierr)
+				table.AddRow(s.Name, "Source", apiPfx, source.Name, source.Active, source.Lag, apierr)
 			} else {
-				table.AddRow(s.Name, "Source", source.External.ApiPrefix, source.Name, humanizeDuration(source.Active), humanize.Comma(int64(source.Lag)), apierr)
+				table.AddRow(s.Name, "Source", apiPfx, source.Name, humanizeDuration(source.Active), humanize.Comma(int64(source.Lag)), apierr)
 			}
 
 		}
