@@ -19,7 +19,7 @@ import (
 	"runtime/debug"
 
 	"github.com/choria-io/fisk"
-	"github.com/nats-io/natscli/cli"
+	"github.com/trigovision/natscli/cli"
 )
 
 var version = "development"
