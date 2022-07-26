@@ -1,4 +1,4 @@
-module github.com/nats-io/natscli
+module github.com/trigovision/natscli
 
 go 1.18
 

@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/nats-io/nats.go"
-	"github.com/nats-io/natscli/cli"
+	"github.com/trigovision/natscli/cli"
 )
 
 func init() {
